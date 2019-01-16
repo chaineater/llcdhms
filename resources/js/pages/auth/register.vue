@@ -61,6 +61,7 @@ import Form from 'vform'
 import LoginWithGithub from '~/components/LoginWithGithub'
 
 export default {
+  layout: 'basic',
   middleware: 'guest',
 
   components: {

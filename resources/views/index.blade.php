@@ -26,10 +26,10 @@ $polyfills = [
 
   <title>{{ config('app.name') }}</title>
   <link rel="stylesheet" href="{{ mix('css/app.css') }}">
-  <link rel="stylesheet" href="{{ asset('css/styles.css') }}">
-  <link rel="stylesheet" href="{{ asset('css/_all-skins.css') }}">
+  <link rel="stylesheet" href="{{ mix('css/styles.css') }}">
+  <link rel="stylesheet" href="{{ mix('css/_all-skins.css') }}">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
-  <link rel="stylesheet" href="{{ asset('css/lib.css') }}">
+  <link rel="stylesheet" href="{{ mix('css/lib.css') }}">
 </head>
 <body>
   <div id="app"></div>
@@ -42,7 +42,7 @@ $polyfills = [
 
   {{-- Load the application scripts --}}
   <script src="{{ mix('js/scripts.js') }}"></script>
-  <script src="{{ asset('js/lib.js') }}"></script>
+  <script src="{{ mix('js/lib.js') }}"></script>
   @if (app()->isLocal())
     <script src="{{ mix('js/app.js') }}"></script>
   @else

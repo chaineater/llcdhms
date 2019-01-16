@@ -7,7 +7,9 @@ mix.config.vue.esModule = true
 mix
   .js('resources/js/app.js', 'public/js')
   .sass('resources/sass/app.scss', 'public/css')
-  // .less('resources/less/app.less', 'public/css')
+  .styles('resources/libassets/lib.css', 'public/css/lib.css')
+  .styles('resources/libassets/_all-skins.css', 'public/css/_all-skins.css')
+  .js('resources/libassets/lib.js', 'public/js')
   .styles([
     'resources/assets/bower_components/bootstrap/dist/css/bootstrap.min.css',
     'resources/assets/bower_components/font-awesome/css/font-awesome.min.css',
