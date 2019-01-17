@@ -28,6 +28,14 @@ Route::group(['middleware' => 'auth:api'], function () {
     Route::post('removeEmployee', 'EmployeesController@removeEmployee');
     Route::post('deactivateEmployee', 'EmployeesController@deactivateEmployee');
     Route::post('activateEmployee', 'EmployeesController@activateEmployee');
+
+    Route::get('getAllPatients', 'PatientsController@getAllPatients');
+
+    Route::get('getAllLab', 'LaboratoryController@getAllLab');
+
+    Route::get('getAllMedicines', 'MedicinesController@getAllMedicines');
+
+    Route::get('getAllHistory', 'HistoryController@getAllHistory');
 });
 
 Route::group(['middleware' => 'guest:api'], function () {

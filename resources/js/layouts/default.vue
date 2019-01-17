@@ -4,9 +4,9 @@
       <header class="main-header">
         <a href="/home" class="logo">
           <!-- mini logo for sidebar mini 50x50 pixels -->
-          <span class="logo-mini"><b>HMS</b></span>
+          <span class="logo-mini"><fa icon="h-square" fixed-width /></span>
           <!-- logo for regular state and mobile devices -->
-          <span class="logo-lg"><b>HMS</b> Admin</span>
+          <span class="logo-lg"><fa icon="h-square" fixed-width /><b>LLCDHMS</b></span>
         </a>
         <navbar />
       </header>
@@ -36,7 +36,7 @@
         <div class="pull-right hidden-xs">
           <b>Version</b> 0.1.0
         </div>
-        <strong>Copyright &copy; 2019.</strong> All rights
+        <strong>Copyright &copy; LLCDHMS-Devs 2019.</strong> All rights
         reserved.
       </footer>
     </div>

@@ -4,6 +4,9 @@
 
 <script>
 export default {
-  middleware: 'auth'
+  middleware: 'auth',
+  metaInfo () {
+    return { title: 'Medicines' }
+  }
 }
 </script>

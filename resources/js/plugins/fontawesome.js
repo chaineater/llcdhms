@@ -8,7 +8,7 @@ import {
   faUser, faLock, faSignOutAlt, faCog, faStethoscope,
   faTh, faWheelchair, faFlask, faHistory, faMedkit, faHome,
   faSearch, faCircle, faBell, faBars, faUsers, faExclamationTriangle,
-  faShoppingCart, faSkullCrossbones, faPlus
+  faShoppingCart, faSkullCrossbones, faPlus, faUserMd, faHSquare
 } from '@fortawesome/free-solid-svg-icons'
 
 import {
@@ -19,7 +19,7 @@ library.add(
   faUser, faLock, faSignOutAlt, faCog, faGithub, faStethoscope,
   faTh, faWheelchair, faFlask, faHistory, faMedkit, faHome,
   faSearch, faCircle, faBell, faBars, faUsers, faExclamationTriangle,
-  faShoppingCart, faSkullCrossbones, faPlus
+  faShoppingCart, faSkullCrossbones, faPlus, faUserMd, faHSquare
 )
 
 Vue.component('fa', FontAwesomeIcon)
