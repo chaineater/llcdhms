@@ -22,6 +22,12 @@ Route::group(['middleware' => 'auth:api'], function () {
 
     Route::patch('settings/profile', 'Settings\ProfileController@update');
     Route::patch('settings/password', 'Settings\PasswordController@update');
+
+    Route::get('getAllEmployees', 'EmployeesController@getAllEmployees');
+    Route::post('addEmployee', 'EmployeesController@addEmployee');
+    Route::post('removeEmployee', 'EmployeesController@removeEmployee');
+    Route::post('deactivateEmployee', 'EmployeesController@deactivateEmployee');
+    Route::post('activateEmployee', 'EmployeesController@activateEmployee');
 });
 
 Route::group(['middleware' => 'guest:api'], function () {

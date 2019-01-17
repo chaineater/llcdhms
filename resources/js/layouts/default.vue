@@ -1,12 +1,12 @@
 <template>
-  <body class="hold-transition skin-blue sidebar-mini">
+  <div style="height: 100vh">
     <div class="wrapper">
       <header class="main-header">
         <a href="/home" class="logo">
           <!-- mini logo for sidebar mini 50x50 pixels -->
-          <span class="logo-mini"><b>A</b>PNL</span>
+          <span class="logo-mini"><b>HMS</b></span>
           <!-- logo for regular state and mobile devices -->
-          <span class="logo-lg"><b>Admin</b>Panel</span>
+          <span class="logo-lg"><b>HMS</b> Admin</span>
         </a>
         <navbar />
       </header>
@@ -15,15 +15,20 @@
       <div class="content-wrapper">
         <section class="content-header">
           <h1>
-            Dashboard
+            <fa v-if="$route.meta.icon" :icon="$route.meta.icon" fixed-width /> {{ _.capitalize([string=$route.name]) }}
             <small>Control panel</small>
           </h1>
           <ol class="breadcrumb">
-            <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-            <li class="active">Dashboard</li>
+            <li v-for="(breadcrumb, idx) in breadcrumbList"
+                :key="idx"
+                :class="{'linked': !!breadcrumb.link, 'active': true }"
+                @click="routeTo(idx)"
+            >
+              <fa v-if="breadcrumb.name === 'Dashboard'" icon="th" fixed-width /> {{ breadcrumb.name }}
+            </li>
           </ol>
         </section>
-        <section class="content" style="height: 500px">
+        <section class="content">
           <child />
         </section>
       </div>
@@ -35,7 +40,7 @@
         reserved.
       </footer>
     </div>
-  </body>
+  </div>
 </template>
 
 <script>
@@ -52,10 +57,28 @@ export default {
     Navbar,
     Sidebar
   },
+  data () {
+    return {
+      breadcrumbList: null
+    }
+  },
   computed: {
     ...mapGetters({
       users: 'auth/users'
     })
+  },
+  watch: {
+    '$route' () {
+      console.log(this.$route.meta.breadcrumb)
+      this.breadcrumbList = this.$route.meta.breadcrumb
+    }
+  },
+  methods: {
+    routeTo (pRouteTo) {
+      if (this.breadcrumbList[pRouteTo].link) {
+        this.$router.push(this.breadcrumbList[pRouteTo].link)
+      }
+    }
   }
 }
 </script>

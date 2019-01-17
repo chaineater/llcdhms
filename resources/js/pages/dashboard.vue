@@ -1,9 +1,9 @@
 <template>
-  <vuetable
-    :api-mode="false"
-    :fields="fields"
-    :data="data"
-  />
+  <div class="box">
+    <div class="box-body">
+      <h3>DASHBOARD</h3>
+    </div>
+  </div>
 </template>
 
 <script>
@@ -15,27 +15,6 @@ export default {
   },
   data () {
     return {
-      fields: ['name', 'email', 'birthdate', 'gender'],
-      data: [
-        {
-          name: 'asd',
-          email: 'asda',
-          birthdate: 'asdasd',
-          gender: 'asdsda'
-        },
-        {
-          name: 'asd',
-          email: 'asda',
-          birthdate: 'asdasd',
-          gender: 'asdsda'
-        },
-        {
-          name: 'asd',
-          email: 'asda',
-          birthdate: 'asdasd',
-          gender: 'asdsda'
-        }
-      ]
     }
   }
 }

@@ -24,7 +24,60 @@ export default [
   { path: '/password/reset', name: 'password.request', component: PasswordEmail },
   { path: '/password/reset/:token', name: 'password.reset', component: PasswordReset },
 
-  { path: '/dashboard', name: 'dashboard', component: Dashboard },
+  { path: '/dashboard',
+    name: 'dashboard',
+    component: Dashboard,
+    meta: {
+      breadcrumb: [
+        { name: 'Dashboard' }
+      ],
+      icon: 'th'
+    } },
+  { path: '/employees',
+    name: 'employees',
+    component: Employees,
+    meta: {
+      breadcrumb: [
+        { name: 'Employees' }
+      ],
+      icon: 'users'
+    } },
+  { path: '/patients',
+    name: 'patients',
+    component: Patients,
+    meta: {
+      breadcrumb: [
+        { name: 'Patients' }
+      ],
+      icon: 'wheelchair'
+    } },
+  { path: '/laboratory',
+    name: 'laboratory',
+    component: Laboratory,
+    meta: {
+      breadcrumb: [
+        { name: 'Laboratory' }
+      ],
+      icon: 'flask'
+    } },
+  { path: '/medicines',
+    name: 'medicines',
+    component: Medicines,
+    meta: {
+      breadcrumb: [
+        { name: 'Medicines' }
+      ],
+      icon: 'medkit'
+    } },
+  { path: '/history',
+    name: 'history',
+    component: History,
+    meta: {
+      breadcrumb: [
+        { name: 'History' }
+      ],
+      icon: 'history'
+    } },
   { path: '/settings',
     component: Settings,
     children: [
@@ -32,12 +85,5 @@ export default [
       { path: 'profile', name: 'settings.profile', component: SettingsProfile },
       { path: 'password', name: 'settings.password', component: SettingsPassword }
     ] },
-
-  { path: '/employees', name: 'employees', component: Employees },
-  { path: '/patients', name: 'patients', component: Patients },
-  { path: '/laboratory', name: 'laboratory', component: Laboratory },
-  { path: '/medicines', name: 'medicines', component: Medicines },
-  { path: '/history', name: 'history', component: History },
-
   { path: '*', component: NotFound }
 ]

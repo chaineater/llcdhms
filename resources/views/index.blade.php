@@ -31,7 +31,7 @@ $polyfills = [
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
   <link rel="stylesheet" href="{{ mix('css/lib.css') }}">
 </head>
-<body>
+<body class="hold-transition skin-yellow sidebar-mini">
   <div id="app"></div>
 
   {{-- Global configuration object --}}

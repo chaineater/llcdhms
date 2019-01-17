@@ -2,45 +2,29 @@
   <nav class="navbar navbar-static-top">
     <!-- Sidebar toggle button-->
     <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
-      <span class="sr-only">Toggle navigation</span>
+      <fa icon="bars" fixed-width />
     </a>
     <div class="navbar-custom-menu">
       <ul class="nav navbar-nav">
         <!-- Notifications: style can be found in dropdown.less -->
         <li class="dropdown notifications-menu">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-            <i class="fa fa-bell-o"></i>
-            <span class="label label-warning">10</span>
+            <fa icon="bell" fixed-width />
+            <span class="label label-primary">2</span>
           </a>
           <ul class="dropdown-menu">
-            <li class="header">You have 10 notifications</li>
+            <li class="header">You have 2 notifications</li>
             <li>
               <!-- inner menu: contains the actual data -->
               <ul class="menu">
                 <li>
                   <a href="#">
-                    <i class="fa fa-users text-aqua"></i> 5 new members joined today
+                    <fa icon="exclamation-triangle" class="text-yellow" fixed-width /> Biogesic with ID 001 will be expired after 4 days
                   </a>
                 </li>
                 <li>
                   <a href="#">
-                    <i class="fa fa-warning text-yellow"></i> Very long description here that may not fit into the
-                    page and may cause design problems
-                  </a>
-                </li>
-                <li>
-                  <a href="#">
-                    <i class="fa fa-users text-red"></i> 5 new members joined
-                  </a>
-                </li>
-                <li>
-                  <a href="#">
-                    <i class="fa fa-shopping-cart text-green"></i> 25 sales made
-                  </a>
-                </li>
-                <li>
-                  <a href="#">
-                    <i class="fa fa-user text-red"></i> You changed your username
+                    <fa icon="skull-crossbones" class="text-red" fixed-width /> Gardan with ID 001145 is now expired
                   </a>
                 </li>
               </ul>
@@ -59,7 +43,7 @@
             <li class="user-header">
               <img :src="user.photo_url" class="img-circle" alt="User Image">
 
-              <p>{{ user.name }}</p>
+              <p>{{ user.user_id }} - {{ user.name }} <small>{{ user.user_type }}</small></p>
             </li>
             <!-- Menu Footer-->
             <li class="user-footer">

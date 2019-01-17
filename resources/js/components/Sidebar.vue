@@ -9,7 +9,7 @@
         </div>
         <div class="pull-left info">
           <p>{{ user.name }}</p>
-          <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
+          <a href="#"><fa icon="circle" class="text-success" fixed-width /> Online</a>
         </div>
       </div>
       <!-- search form -->
@@ -17,7 +17,7 @@
         <div class="input-group">
           <input type="text" name="q" class="form-control" placeholder="Search...">
           <span class="input-group-btn">
-            <button type="submit" name="search" id="search-btn" class="btn btn-flat"><i class="fa fa-search"></i>
+            <button type="submit" name="search" id="search-btn" class="btn btn-flat"><fa icon="search" fixed-width />
             </button>
           </span>
         </div>
@@ -27,34 +27,34 @@
       <ul class="sidebar-menu" data-widget="tree">
         <!-- employee, patient, laboratory, medicines, history -->
         <li class="header">MAIN NAVIGATION</li>
-        <li>
+        <li :class="{'active': $route.name === 'dashboard'}">
           <router-link :to="{ name: user ? 'dashboard' : 'welcome' }">
-            <i class="fa fa-th"></i> <span>Dashboard</span>
+            <fa icon="th" fixed-width></fa> <span>Dashboard</span>
           </router-link>
         </li>
-        <li>
+        <li :class="{'active': $route.name === 'employees'}">
           <router-link :to="{ name: 'employees' }">
-            <i class="fa fa-th"></i> <span>Employees</span>
+            <fa icon="users" fixed-width /> <span>Employees</span>
           </router-link>
         </li>
-        <li>
+        <li :class="{'active': $route.name === 'patients'}">
           <router-link :to="{ name: 'patients' }">
-            <i class="fa fa-th"></i> <span>Patients</span>
+            <fa icon="wheelchair" fixed-width /> <span>Patients</span>
           </router-link>
         </li>
-        <li>
+        <li :class="{'active': $route.name === 'laboratory'}">
           <router-link :to="{ name: 'laboratory' }">
-            <i class="fa fa-th"></i> <span>Laboratory</span>
+            <fa icon="flask" fixed-width /> <span>Laboratory</span>
           </router-link>
         </li>
-        <li>
+        <li :class="{'active': $route.name === 'medicines'}">
           <router-link :to="{ name: 'medicines' }">
-            <i class="fa fa-th"></i> <span>Medicines</span>
+            <fa icon="medkit" fixed-width /> <span>Medicines</span>
           </router-link>
         </li>
-        <li>
+        <li :class="{'active': $route.name === 'history'}">
           <router-link :to="{ name: 'history' }">
-            <i class="fa fa-th"></i> <span>History</span>
+            <fa icon="history" fixed-width /> <span>History</span>
           </router-link>
         </li>
       </ul>

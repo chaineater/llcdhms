@@ -6,9 +6,13 @@ import App from '~/components/App'
 
 import '~/plugins'
 import '~/components'
-
+import _ from 'lodash'
 import Vuetable from 'vuetable-2'
+
+
 Vue.component('vuetable', Vuetable)
+
+Vue.prototype._ = _
 
 Vue.config.productionTip = false
 

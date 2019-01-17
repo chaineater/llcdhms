@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Auth;
 use App\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
 
@@ -57,9 +58,17 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
+        $last = DB::table('users')->latest('id')->first();
+
+        $last_user_id = $last->user_id;
+        $last_user_id++;
+
         return User::create([
             'name' => $data['name'],
             'email' => $data['email'],
+            'user_type' => $data['userType'],
+            'user_id' => $last_user_id,
+            'status' => 'Active',
             'password' => bcrypt($data['password']),
         ]);
     }

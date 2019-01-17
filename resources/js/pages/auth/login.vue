@@ -2,7 +2,7 @@
   <div>
     <div class="login-box">
       <div class="login-logo">
-        ADMIN PANEL
+        HMS Admin
       </div>
       <div class="login-box-body">
         <p class="login-box-msg">Sign in to start your session</p>

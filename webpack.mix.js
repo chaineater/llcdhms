@@ -12,11 +12,12 @@ mix
   .js('resources/libassets/lib.js', 'public/js')
   .styles([
     'resources/assets/bower_components/bootstrap/dist/css/bootstrap.min.css',
-    'resources/assets/bower_components/font-awesome/css/font-awesome.min.css',
+    'resources/assets/bower_components/select2/dist/css/select2.min.css',
     'resources/assets/bower_components/Ionicons/css/ionicons.min.css'
   ], 'public/css/styles.css')
   .scripts([
-    'resources/assets/bower_components/jquery/dist/jquery.min.js'
+    'resources/assets/bower_components/jquery/dist/jquery.min.js',
+    'resources/assets/bower_components/bootstrap/dist/js/bootstrap.min.js'
   ], 'public/js/scripts.js')
 
   .sourceMaps()
