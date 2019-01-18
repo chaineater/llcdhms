@@ -60,7 +60,7 @@ class RegisterController extends Controller
     {
         $last = DB::table('users')->latest('id')->first();
 
-        $last_user_id = $last->user_id;
+        $last_user_id = !$last ? 'LLC-0000' : $last->user_id;
         $last_user_id++;
 
         return User::create([

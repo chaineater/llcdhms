@@ -11,10 +11,15 @@ const SettingsProfile = () => import('~/pages/settings/profile').then(m => m.def
 const SettingsPassword = () => import('~/pages/settings/password').then(m => m.default || m)
 
 const Employees = () => import('~/pages/employees').then(m => m.default || m)
-const Patients = () => import('~/pages/patients').then(m => m.default || m)
+
+const PatientsIndex = () => import('~/pages/patients/index').then(m => m.default || m)
+const Patients = () => import('~/pages/patients/patients').then(m => m.default || m)
+
 const Laboratory = () => import('~/pages/laboratory').then(m => m.default || m)
 const Medicines = () => import('~/pages/medicines').then(m => m.default || m)
 const History = () => import('~/pages/history').then(m => m.default || m)
+
+const PatientsTransactions = () => import('~/pages/patients/patientsTransactions').then(m => m.default || m)
 
 export default [
   { path: '/', name: 'welcome', component: Welcome },
@@ -85,5 +90,13 @@ export default [
       { path: 'profile', name: 'settings.profile', component: SettingsProfile },
       { path: 'password', name: 'settings.password', component: SettingsPassword }
     ] },
+  {
+    path: '/patients/transactions',
+    name: 'patients.transactions',
+    component: PatientsTransactions,
+    props: (route) => ({
+      test: route.query.test
+    })
+  },
   { path: '*', component: NotFound }
 ]

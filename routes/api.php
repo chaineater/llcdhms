@@ -30,6 +30,7 @@ Route::group(['middleware' => 'auth:api'], function () {
     Route::post('activateEmployee', 'EmployeesController@activateEmployee');
 
     Route::get('getAllPatients', 'PatientsController@getAllPatients');
+    Route::post('addPatient', 'PatientsController@addPatient');
 
     Route::get('getAllLab', 'LaboratoryController@getAllLab');
 

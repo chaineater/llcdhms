@@ -69,7 +69,6 @@ export default {
   },
   watch: {
     '$route' () {
-      console.log(this.$route.meta.breadcrumb)
       this.breadcrumbList = this.$route.meta.breadcrumb
     }
   },

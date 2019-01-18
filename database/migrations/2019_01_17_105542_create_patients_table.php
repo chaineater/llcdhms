@@ -18,8 +18,13 @@ class CreatePatientsTable extends Migration
             $table->string('pid');
             $table->string('name');
             $table->string('address');
+            $table->date('dob');
+            $table->integer('age');
+            $table->string('status');
+            $table->string('religion');
             $table->string('gender');
             $table->string('guardian');
+            $table->string('contact_number');
             $table->timestamps();
         });
     }

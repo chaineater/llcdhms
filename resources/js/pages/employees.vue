@@ -8,6 +8,7 @@
         :api-mode="false"
         :fields="fields"
         :data="data"
+        :css="css.table"
       >
         <div slot="actions" slot-scope="props">
           <button class="btn btn-warning">Reset</button>
@@ -79,6 +80,7 @@
 <script>
 import axios from 'axios'
 import Form from 'vform'
+import tableCssConfig from './tableCssConfig'
 
 export default {
   middleware: 'auth',
@@ -90,6 +92,7 @@ export default {
     return {
       fields: ['user_id', 'name', 'email', 'user_type', 'status', 'actions'],
       data: [],
+      css: tableCssConfig,
       form: new Form({
         name: '',
         email: '',
