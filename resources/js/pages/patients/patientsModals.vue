@@ -132,6 +132,7 @@ export default {
     async addPatient () {
       await this.form.post('/api/addPatient')
       this.$parent.getAllPatients()
+      this.form.reset()
     }
   }
 }

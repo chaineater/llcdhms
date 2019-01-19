@@ -81,6 +81,7 @@
 import axios from 'axios'
 import Form from 'vform'
 import tableCssConfig from './tableCssConfig'
+import { mapGetters } from 'vuex'
 
 export default {
   middleware: 'auth',
@@ -100,6 +101,11 @@ export default {
       })
     }
   },
+  computed: {
+    ...mapGetters({
+      user: 'auth/user'
+    })
+  },
   mounted () {
     this.getAllEmployees()
   },
@@ -112,6 +118,13 @@ export default {
     },
     async registerEmployee () {
       await this.form.post('/api/addEmployee')
+
+      axios.post('/api/createHistory', {
+        history_type: 'registration',
+        action_taken: 'created new account by user',
+        created_by: this.user.name
+      })
+
       this.getAllEmployees()
     },
     removeEmployee (data) {

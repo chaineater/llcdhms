@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateHistoriesTable extends Migration
+class CreateWardsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,9 @@ class CreateHistoriesTable extends Migration
      */
     public function up()
     {
-        Schema::create('histories', function (Blueprint $table) {
+        Schema::create('wards', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('history_type');
-            $table->string('action_taken');
-            $table->string('created_by');
+            $table->string('ward');
             $table->timestamps();
         });
     }
@@ -29,6 +27,6 @@ class CreateHistoriesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('histories');
+        Schema::dropIfExists('wards');
     }
 }

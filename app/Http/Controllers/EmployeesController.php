@@ -49,4 +49,10 @@ class EmployeesController extends Controller
     public function activateEmployee() {
         $data = User::findOrFail(request('id'))->update(['status' => 'Active']);
     }
+
+    public function getDoctors () {
+        $data = User::where('user_type', 'Doctor')->get();
+
+        return response()->json($data);
+    }
 }

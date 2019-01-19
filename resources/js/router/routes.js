@@ -12,7 +12,6 @@ const SettingsPassword = () => import('~/pages/settings/password').then(m => m.d
 
 const Employees = () => import('~/pages/employees').then(m => m.default || m)
 
-const PatientsIndex = () => import('~/pages/patients/index').then(m => m.default || m)
 const Patients = () => import('~/pages/patients/patients').then(m => m.default || m)
 
 const Laboratory = () => import('~/pages/laboratory').then(m => m.default || m)
@@ -20,6 +19,7 @@ const Medicines = () => import('~/pages/medicines').then(m => m.default || m)
 const History = () => import('~/pages/history').then(m => m.default || m)
 
 const PatientsTransactions = () => import('~/pages/patients/patientsTransactions').then(m => m.default || m)
+const PatientsTransactionsAll = () => import('~/pages/patients/patientsTransactionsAll').then(m => m.default || m)
 
 export default [
   { path: '/', name: 'welcome', component: Welcome },
@@ -90,13 +90,12 @@ export default [
       { path: 'profile', name: 'settings.profile', component: SettingsProfile },
       { path: 'password', name: 'settings.password', component: SettingsPassword }
     ] },
+  { path: '/patients/transactions', name: 'patients.transactions', component: PatientsTransactionsAll, props: true },
   {
-    path: '/patients/transactions',
-    name: 'patients.transactions',
+    path: '/patients/transactions/:pid',
+    name: 'patients.transactions.patient',
     component: PatientsTransactions,
-    props: (route) => ({
-      test: route.query.test
-    })
+    props: true
   },
   { path: '*', component: NotFound }
 ]

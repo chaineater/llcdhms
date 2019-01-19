@@ -20,11 +20,11 @@ class CreateTransactionsTable extends Migration
             $table->dateTime('date_admitted');
             $table->string('ward');
             $table->string('bed');
-            $table->string('admitting_diagnosis');
-            $table->dateTime('date_discharge');
-            $table->string('final_diagnosis');
-            $table->string('doctors_prescription');
-            $table->string('total_bills');
+            $table->string('admitting_diagnosis')->nullable();
+            $table->dateTime('date_discharge')->nullable();
+            $table->string('final_diagnosis')->nullable();
+            $table->string('doctors_prescription')->nullable();
+            $table->string('total_bills')->nullable();
             $table->timestamps();
         });
     }

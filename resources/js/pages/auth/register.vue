@@ -77,6 +77,7 @@
 <script>
 import Form from 'vform'
 import LoginWithGithub from '~/components/LoginWithGithub'
+import axios from 'axios'
 
 export default {
   layout: 'basic',
@@ -107,6 +108,12 @@ export default {
 
       // Log in the user.
       const { data: { token } } = await this.form.post('/api/login')
+
+      axios.post('/api/createHistory', {
+        history_type: 'registration',
+        action_taken: 'created new account by registration page',
+        created_by: 'llcdhms system'
+      })
 
       // Save the token.
       this.$store.dispatch('auth/saveToken', { token })

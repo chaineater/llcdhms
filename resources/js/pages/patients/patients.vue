@@ -5,11 +5,11 @@
         <button class="btn btn-primary" data-toggle="modal" data-target="#modal-add-patient">
           <fa icon="plus" fixed-width /> Patient
         </button>
-        <router-link :to="{ name: 'patients.transactions', params: { test } }">
-          <button class="btn btn-warning">
-            View All Patients Transactions
-          </button>
-        </router-link>
+        <!--<router-link to="/patients/transactions?q=all">-->
+          <!--<button class="btn btn-warning">-->
+            <!--View All Patients Transactions-->
+          <!--</button>-->
+        <!--</router-link>-->
       </div>
       <vuetable :api-mode="false"
                 :fields="fields"
@@ -19,7 +19,9 @@
         <div slot="actions" slot-scope="props">
           <button class="btn btn-success">Edit</button>
           <button class="btn btn-primary">View</button>
-          <button class="btn btn-danger">Transactions</button>
+          <router-link :to="{ path: '/patients/transactions/'+ props.rowData.pid, props: { data: props.rowData } }">
+            <button class="btn btn-danger">Transactions</button>
+          </router-link>
         </div>
       </vuetable>
       <router-view/>
