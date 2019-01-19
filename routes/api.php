@@ -34,9 +34,11 @@ Route::group(['middleware' => 'auth:api'], function () {
     Route::post('addPatient', 'PatientsController@addPatient');
     Route::post('getPatient', 'PatientsController@getPatient');
 
-    Route::get('getAllLab', 'LaboratoryController@getAllLab');
+    Route::get('getAllLabs', 'LaboratoryController@getAllLabs');
+    Route::post('addLab', 'LaboratoryController@addLab');
 
     Route::get('getAllMedicines', 'MedicinesController@getAllMedicines');
+    Route::post('addMedicines', 'MedicinesController@addMedicines');
 
     Route::get('getAllHistory', 'HistoryController@getAllHistory');
     Route::post('createHistory', 'HistoryController@createHistory');

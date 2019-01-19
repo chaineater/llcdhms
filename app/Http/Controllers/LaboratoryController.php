@@ -12,4 +12,11 @@ class LaboratoryController extends Controller
 
         return response()->json($data);
     }
+
+    public function addLab () {
+        $data = new Laboratory;
+        $data->lab_name = request('lab_name');
+        $data->lab_price = request('lab_price');
+        $data->save();
+    }
 }

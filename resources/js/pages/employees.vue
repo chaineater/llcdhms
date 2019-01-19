@@ -14,7 +14,7 @@
           <button class="btn btn-warning">Reset</button>
           <button v-if="props.rowData.status === 'Active'" class="btn btn-danger" @click="deactivateEmployee(props.rowData)">Deactivate</button>
           <button v-if="props.rowData.status === 'Inactive'" class="btn btn-success" @click="activateEmployee(props.rowData)">Activate</button>
-          <button class="btn btn-danger" @click="removeEmployee(props.rowData)">Remove</button>
+          <!--<button class="btn btn-danger" @click="removeEmployee(props.rowData)">Remove</button>-->
         </div>
       </vuetable>
     </div>
